@@ -6,9 +6,8 @@ app = FastAPI()
 
 
 @app.get("/")
-async def read_root(request: Request):
-    data: dict | None = await request.json()
-    print(data)
+async def read_root():
+    data = {"message": "This is a simple FastAPI application."}
     return JSONResponse(content=data)
 
 @app.get("/jokes")
